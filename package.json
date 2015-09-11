@@ -16,5 +16,7 @@
   "dependencies": {
     "mongoose": "^4.1.6"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "bool.js": "^0.1.1"
+  }
 }
