@@ -1,0 +1,20 @@
+{
+  "name": "booljs-mongoose",
+  "version": "0.0.1",
+  "description": "Mongoose driver for bool.js",
+  "main": "index.js",
+  "keywords": [
+    "bool.js",
+    "mongoose",
+    "driver"
+  ],
+  "author": "Pablo Andrés Dorado Suárez <pandres95@gentebool.com> (http://community.gentebool.com/pandres95)",
+  "license": "GPL-3.0",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "mongoose": "^4.1.6"
+  },
+  "devDependencies": {}
+}
