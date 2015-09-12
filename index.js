@@ -5,15 +5,18 @@ var async   = require('async')
 ,   url     = require('url')
 ,   mongoose    = require('mongoose');
 
-function wrapModel(_instance, model, name, connection) {
-    var Model = require(model);
+function wrapModel(_instance, path, name, connection) {
+    var Model = require(path);
+
+    var model = connection.model(
+        name,
+        new Model(
+            _instance.getComponents(), mongoose.Schema, mongoose
+        )
+    );
 
     return function () {
-        return connection.model(
-            name, new Model(
-                _instance.getComponents(), mongoose.Schema, mongoose
-            )
-        );
+        return model;
     };
 }
 
