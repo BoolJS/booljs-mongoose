@@ -2,13 +2,14 @@
 'use strict';
 
 var async   = require('async')
-,   url     = require('url');
+,   url     = require('url')
+,   mongoose    = require('mongoose');
 
-function wrapModel(_instance, model, name, mongoose) {
+function wrapModel(_instance, model, name, connection) {
     var Model = require(model);
 
     return function () {
-        return mongoose.model(
+        return connection.model(
             name, new Model(
                 _instance.getComponents(), mongoose.Schema, mongoose
             )
@@ -18,8 +19,9 @@ function wrapModel(_instance, model, name, mongoose) {
 
 module.exports = {
     openDatabase: function (dbconfig) {
+        dbconfig = dbconfig[process.env.NODE_ENV || 'development'];
+
         var defer       = q.defer()
-        ,   mongoose    = require('mongoose')
         ,   uriConf     = {
             protocol: 'mongodb',
             slashes: true,
@@ -45,14 +47,14 @@ module.exports = {
 
         return defer.promise;
     },
-    fetchModels: function (_instance, models, mongoose) {
+    fetchModels: function (_instance, models, connection) {
         var fetch = q.nbind(async.forEachOfSeries, async);
 
-        return fetch(models, function (path, model, next) {
-            var _model = wrapModel(_instance, path, model, mongoose);
+        return fetch(models, function (path, name, next) {
+            var _model = wrapModel(_instance, path, name, connection, mongoose);
 
             _instance.insertComponent(
-                model, _model, _instance.getComponents().models
+                name, _model, _instance.getComponents().models
             );
             next();
         });
