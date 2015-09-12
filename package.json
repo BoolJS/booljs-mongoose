@@ -21,7 +21,9 @@
     "bool.js": "^0.1.2",
     "chai": "^3.2.0",
     "chai-as-promised": "^5.1.0",
-    "mocha": "^2.3.2"
+    "mocha": "^2.3.2",
+    "supertest": "^1.1.0",
+    "supertest-as-promised": "^2.0.2"
   },
   "directories": {
     "example": "example",
