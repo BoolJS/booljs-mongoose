@@ -11,15 +11,15 @@
   "author": "Pablo Andrés Dorado Suárez <pandres95@gentebool.com> (http://community.gentebool.com/pandres95)",
   "license": "GPL-3.0",
   "scripts": {
-    "test": "NODE_ENV=development mocha --recursive --timeout 10000 test"
+    "test": "mocha --recursive --timeout 10000 test"
   },
   "dependencies": {
     "async": "^1.4.2",
-    "booljs-api": "^0.1.1",
+    "booljs-api": "^0.1.3",
     "mongoose": "^4.1.6"
   },
   "devDependencies": {
-    "bool.js": "^0.1.3",
+    "bool.js": "^0.1.7",
     "chai": "^3.2.0",
     "chai-as-promised": "^5.1.0",
     "mocha": "^2.3.2",
