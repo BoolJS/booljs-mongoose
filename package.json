@@ -1,6 +1,6 @@
 {
   "name": "booljs-mongoose",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "Mongoose driver for bool.js",
   "main": "index.js",
   "keywords": [
