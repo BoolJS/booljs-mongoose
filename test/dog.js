@@ -12,9 +12,11 @@ describe('Dog', function () {
     var expect      = chai.expect;
 
     before(function () {
-        return booljs('com.example.api')
-        .setBase('example').setDatabaseLoader(require('..'))
-        .run().then(function (api) {
+        return booljs('com.example.api', [ require.resolve('..') ])
+            .setBase('example')
+            .setDatabaseLoader('booljs-mongoose')
+            .run()
+        .then(function (api) {
             app = api.app;
             Dog = new app.models.Dog();
             dogDao = new app.dao.Dog();

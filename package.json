@@ -15,10 +15,9 @@
   },
   "dependencies": {
     "async": "^1.4.2",
-    "mongoose": "^4.1.6"
+    "mongoose": "^4.1.8"
   },
   "devDependencies": {
-    "bool.js": "^0.2.2",
     "chai": "^3.2.0",
     "chai-as-promised": "^5.1.0",
     "mocha": "^2.3.2",
@@ -37,4 +36,4 @@
     "url": "https://github.com/BoolJS/booljs-mongoose/issues"
   },
   "homepage": "https://github.com/BoolJS/booljs-mongoose#readme"
-  }
+}
