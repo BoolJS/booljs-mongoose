@@ -13,9 +13,12 @@
   "scripts": {
     "test": "mocha --recursive --timeout 10000 test"
   },
+  "peerDependencies": {
+    "mongoose": "*",
+    "booljs-api": "0.3.x"
+  },
   "dependencies": {
-    "async": "^1.4.2",
-    "mongoose": "^4.1.8"
+    "async": "^1.4.2"
   },
   "devDependencies": {
     "chai": "^3.2.0",
