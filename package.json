@@ -1,31 +1,22 @@
 {
-  "name": "booljs-mongoose",
+  "name": "booljs.mongoose",
   "version": "0.3.0",
   "description": "Mongoose driver for bool.js",
   "main": "index.js",
+  "license": "GPL-3.0",
+  "scripts": {
+    "pretest": "eslint **/*.js",
+    "test": "cross-env NODE_ENV=test mocha --recursive --timeout 10000 test"
+  },
   "keywords": [
     "bool.js",
     "mongoose",
     "driver"
   ],
-  "author": "Pablo Andrés Dorado Suárez <pandres95@gentebool.com> (http://community.gentebool.com/pandres95)",
-  "license": "GPL-3.0",
-  "scripts": {
-    "test": "mocha --recursive --timeout 10000 test"
-  },
-  "peerDependencies": {
-    "mongoose": "*",
-    "booljs-api": "0.3.x"
-  },
-  "dependencies": {
-    "async": "^1.4.2"
-  },
-  "devDependencies": {
-    "chai": "^3.2.0",
-    "chai-as-promised": "^5.1.0",
-    "mocha": "^2.3.2",
-    "supertest": "^1.1.0",
-    "supertest-as-promised": "^2.0.2"
+  "author": {
+    "name": "Pablo Andrés Dorado Suárez",
+    "mail": "im@pandres95.me",
+    "url": "http://community.gentebool.com/pandres95"
   },
   "directories": {
     "example": "example",
@@ -38,5 +29,29 @@
   "bugs": {
     "url": "https://github.com/BoolJS/booljs-mongoose/issues"
   },
-  "homepage": "https://github.com/BoolJS/booljs-mongoose#readme"
+  "homepage": "https://github.com/BoolJS/booljs-mongoose#readme",
+  "peerDependencies": {
+    "mongoose": "*",
+    "booljs.api": "0.5.x"
+  },
+  "dependencies": {
+    "async": "^1.4.2",
+    "booljs": "^0.7.6",
+    "mongoose": "^4.13.0"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-as-promised": "^7.1.1",
+    "cross-env": "^5.0.1",
+    "eslint": "^4.2.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.1.0",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "faker": "^4.1.0",
+    "mocha": "^3.5.0",
+    "supertest": "^3.0.0",
+    "supertest-as-promised": "^4.0.2"
+  }
 }
