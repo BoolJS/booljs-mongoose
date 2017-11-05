@@ -1,15 +1,10 @@
 'use strict';
 
-module.exports = function(app){
+module.exports = function (app) {
+    const Dog = app.dao.Dog;
+    const json = new app.views.Json();
 
-    var Dog     = app.dao.Dog
-    ,   json    = new app.views.Json();
-
-    return {
-        list: function(req, res, next){
-            var dog = new Dog();
-            json.promise(dog.list(), res, next);
-        }
+    this.list = function (req, res, next) {
+        json.promise(new Dog().list(), res, next);
     };
-
 };

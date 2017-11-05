@@ -1,17 +1,16 @@
 'use strict';
 
-var dogs = [];
+const MongooseModel = require('../../model');
 
-module.exports = function (app, Schema, mongoose) {
+module.exports = class DogModel extends MongooseModel {
+    constructor (app, { Schema, mongoose }) {
+        super(new Schema({
+            name: String,
+            age: Number
+        }));
+    }
 
-    var DogSchema = new Schema({
-        name: String,
-        age: Number
-    });
-
-    DogSchema.statics.list = function () {
-        return q.nbind(this.find, this)();
+    static list () {
+        return this.find().exec();
     };
-
-    return DogSchema;
 };

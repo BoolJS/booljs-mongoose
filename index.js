@@ -1,26 +1,30 @@
 'use strict';
 
-const API = require('booljs-api');
+const { DatabaseLoader } = require('booljs.api');
 const lib = require('./lib');
 
-module.exports = class BoolJSMongoose extends API.DatabaseLoader {
-    constructor(){
-        super('booljs-mongoose');
+module.exports = class BoolJSMongoose extends DatabaseLoader {
+    constructor () {
+        super('booljs.mongoose');
     }
 
-    openDatabase(dbconfig) {
+    openDatabase (dbconfig) {
         return lib.openDatabase(dbconfig);
     }
 
-    fetchModels(instance, models, connection){
-        return lib.fetchModels(instance, models, connection);
+    modelClass () {
+        return lib.modelClass;
     }
 
-    modelTemplate(){
+    fetchModels (instance, name, Component, connection) {
+        return lib.fetchModels(instance, name, Component, connection);
+    }
+
+    modelTemplate () {
         return lib.modelTemplate();
     }
 
-    modelConfiguration(){
+    modelConfiguration () {
         return lib.modelConfiguration();
     }
 };

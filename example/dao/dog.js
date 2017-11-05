@@ -1,13 +1,9 @@
 'use strict';
 
-module.exports = function(app){
+module.exports = function (app) {
+    const Dog = app.models.Dog;
 
-    var dog = new app.models.Dog();
-
-    return {
-        list: function(){
-            return dog.list();
-        }
+    this.list = function ({ query, fields, options } = {}) {
+        return new Dog().list(query, fields, options);
     };
-
 };
