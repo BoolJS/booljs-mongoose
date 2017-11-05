@@ -1,69 +1,47 @@
-/* global describe, before, it */
 'use strict';
 
-describe('Dog', function () {
-    var booljs      = require('bool.js')
-    ,   chai        = require('chai')
-    ,   asPromised  = require('chai-as-promised')
-    ,   supertest   = require('supertest-as-promised')
-    ,   app, Dog, dogDao, agent;
+const Bool = require('booljs');
 
-    chai.use(asPromised);
-    var expect      = chai.expect;
+const chai = require('chai');
+chai.use(require('chai-as-promised'));
+const { expect } = chai;
+const Supertest = require('supertest-as-promised');
 
-    before(function () {
-        return booljs('com.example.api', [ require.resolve('..') ])
+describe('Dog', () => {
+    let app, model, dao, agent;
+
+    before(async () => {
+        let API = await new Bool('com.example.api', [ require.resolve('..') ])
             .setBase('example')
-            .setDatabaseLoader('booljs-mongoose')
-            .run()
-        .then(function (api) {
-            app = api.app;
-            Dog = new app.models.Dog();
-            dogDao = new app.dao.Dog();
-            agent = supertest(api.server);
-            return q.resolve();
-        });
+            .setDatabaseDrivers(['booljs.mongoose'])
+            .run();
+
+        agent = new Supertest(API.server);
+        app = API.app;
+
+        model = new app.models.Dog();
+        dao = new app.dao.Dog();
     });
 
-    describe('Model', function () {
-
-        before(function () {
-            return q.nbind(Dog.collection.remove, Dog.collection)();
-        });
-
-        it('retrieves an empty list', function () {
-            return expect(Dog.list()).to.eventually.have.length(0);
-        });
-
+    describe('Model', () => {
+        describe('#list', () => it('retrieves an empty list', () => expect(
+            model.list()
+        ).to.eventually.have.length(0)));
     });
 
-    describe('DAO', function () {
-
-        before(function () {
-            return q.nbind(Dog.collection.remove, Dog.collection)();
-        });
-
-        it('retrieves an empty list', function () {
-            return expect(dogDao.list()).to.eventually.have.length(0);
-        });
-
+    describe('DAO', () => {
+        describe('#list', () => it('retrieves an empty list', () => expect(
+            dao.list()
+        ).to.eventually.have.length(0)));
     });
 
-    describe('Controller', function () {
-
-        before(function () {
-            return q.nbind(Dog.collection.remove, Dog.collection)();
-        });
-
-        it('retrieves an empty list', function () {
-
-            return agent.get('/dog').expect(200).then(function (response) {
-                expect(response.body.data).to.have.length(0);
-            });
-
-
-        });
-
+    describe('Controller', () => {
+        describe('/dogs', () => it('retrieves an empty list', () => (
+            expect(agent
+                .get('/dogs')
+                .expect(200)
+                .then(res => res.body.data)
+            ).to.eventually.have.length(0)
+        )));
     });
-
 });
