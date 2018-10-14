@@ -1,6 +1,6 @@
 {
   "name": "booljs.mongoose",
-  "version": "0.3.4",
+  "version": "0.4.0",
   "description": "Mongoose driver for bool.js",
   "main": "index.js",
   "license": "GPL-3.0",
