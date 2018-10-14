@@ -31,7 +31,7 @@
   },
   "homepage": "https://github.com/BoolJS/booljs-mongoose#readme",
   "peerDependencies": {
-    "mongoose": "*",
+    "mongoose": ">5.0.0",
     "booljs.api": "0.5.x"
   },
   "devDependencies": {
