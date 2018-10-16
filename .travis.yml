@@ -6,3 +6,11 @@ install:
   - npm install booljs@latest
   - npm install mongoose
   - npm install
+
+deploy:
+  provider: npm
+  email: hola@pablodorado.com
+  api_key: $NPM_API_KEY
+  on:
+    branch: master
+    tags: true
