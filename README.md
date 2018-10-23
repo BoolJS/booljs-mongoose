@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/BoolJS/booljs-mongoose.svg?branch=master)](https://travis-ci.org/BoolJS/booljs-mongoose) [![Dependencies status for booljs.mongoose](https://david-dm.org/BoolJS/booljs-mongoose.svg)](https://david-dm.org/BoolJS/booljs-mongoose) [![devDependency Status](https://david-dm.org/BoolJS/booljs-mongoose/dev-status.svg)](https://david-dm.org/BoolJS/booljs-mongoose#info=devDependencies) [![Code Climate](https://codeclimate.com/github/BoolJS/booljs-mongoose/badges/gpa.svg)](https://codeclimate.com/github/BoolJS/booljs-mongoose) [![Inline docs](http://inch-ci.org/github/booljs/booljs-mongoose.svg?branch=master)](http://inch-ci.org/github/booljs/booljs-mongoose)
 
-[![Bool.js NPM icon](https://nodei.co/npm/booljs.mongoose.png)](https://npmjs.com/packages/booljs.mongoose)
+[![Bool.js NPM icon](https://nodei.co/npm/@booljs/mongoose.png)](https://npmjs.com/package/@booljs/mongoose)
 
 [![Join the chat at https://gitter.im/BoolJS/booljs-mongoose](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/BoolJS/booljs-mongoose?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
