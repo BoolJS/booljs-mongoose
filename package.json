@@ -42,5 +42,7 @@
     "faker": "^4.1.0",
     "mocha": "^5.2.0"
   },
-  "dependencies": {}
+  "publishConfig": {
+    "access": "public"
+  }
 }
