@@ -3,9 +3,8 @@ language: node_js
 node_js:
   - 8
 install:
-  - npm install booljs@latest
-  - npm install mongoose
   - npm install
+  - npm install --no-save booljs mongoose
 
 deploy:
   provider: npm

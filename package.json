@@ -32,7 +32,7 @@
   "homepage": "https://github.com/BoolJS/booljs-mongoose#readme",
   "peerDependencies": {
     "mongoose": ">5.0.0",
-    "booljs.api": "0.5.x"
+    "@booljs/api": "0.6.x"
   },
   "devDependencies": {
     "chai": "^4.1.2",
@@ -45,8 +45,7 @@
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1",
     "faker": "^4.1.0",
-    "mocha": "^3.5.0",
-    "supertest": "^3.0.0",
-    "supertest-as-promised": "^4.0.2"
-  }
+    "mocha": "^3.5.0"
+  },
+  "dependencies": {}
 }

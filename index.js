@@ -1,11 +1,11 @@
 'use strict';
 
-const { DatabaseLoader } = require('booljs.api');
+const { DatabaseLoader } = require('@booljs/api');
 const lib = require('./lib');
 
 module.exports = class BoolJSMongoose extends DatabaseLoader {
-    constructor () {
-        super('booljs.mongoose');
+    constructor ({ connectionSettingsStoreName = 'mongoose' } = {}) {
+        super('booljs.mongoose', connectionSettingsStoreName);
     }
 
     openDatabase (dbconfig) {
